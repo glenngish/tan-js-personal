@@ -31,8 +31,6 @@ export default function Header() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const dark = useMemo(() => colorScheme === 'dark', [colorScheme]);
 
-  const currentCompany = useMemo(() => details.experience.find((experience) => experience.end === 'Present') || undefined, []);
-
   return (
     <Stack
       gap="20px"
@@ -160,16 +158,6 @@ export default function Header() {
         <br />
         I love crafting precise, high-quality code.
         {' '}
-            &nbsp;
-        {currentCompany ? (
-          <>
-            {'at '}
-            <ATypography textColor="text.primary" href={currentCompany.url}>
-              {currentCompany.company}
-            </ATypography>
-            &nbsp;
-          </>
-        ) : null}
       </Typography>
     </Stack>
   );
